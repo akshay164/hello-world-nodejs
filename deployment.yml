@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: akshay-hello-world-deployment
+spec:
+  selector:
+    matchLabels:
+      app: akshay-hello-world-container
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: akshay-hello-world-container
+    spec:
+      containers:
+        - name: akshay-hello-world-container
+          image: akshay-hello-world-container-20190628162631435
+          ports:
+            - containerPort: 3000
